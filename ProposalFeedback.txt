@@ -1,0 +1,34 @@
+
+CMSI 4072 Spring 2026
+Project Proposal Feedback
+Project: Phish Guard
+=========================
+Proposal Document [2 points]:
+   Document not submitted by deadline.  Zero points
+
+Proposal Presentation [Slides and video] [3 points]:
+   Document not submitted by deadline.  Zero points
+
+
+Summary:
+--------
+
+Hope to see your video next week!
+
+
+VIDEO EVALUATION
+================
+EXCELLENT project, Artur!  I like the slides, the background is nice and is
+not distracting.  You are obviously talking without a script and are not
+reading from notes which is great.  You obviously know what you are talking
+about and you justify the project well.  Doing a browser plug-in is a good
+idea to properly scope the project for one semester.  You also seem to have
+the required knowledge to implement this project, so you have a great idea!
+
+One thing I notice is that your picture in the lower left covers up the text
+on a few slides.  Since English reads from right to left, it might be better
+next time to have your face on the other side.
+
+Other than that, good job!
+
+You earn back Two out of Five points for this deliverable.
