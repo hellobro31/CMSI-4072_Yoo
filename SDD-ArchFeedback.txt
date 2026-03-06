@@ -1,0 +1,119 @@
+
+Documentation Feedback ~ Deliverable #3
+Software Design Document ~ Architecture
+CMSI 4072 Spring 2026 ~ Phishing Detection
+=======================================
+
+6.1 INTRODUCTION SECTION:
+   System objectives section
+      Strengths:
+         Objectives are specific and actionable: real-time detection,
+            user warnings, analysis of threat signals, low latency, optional
+            backend logging, and explainability.
+         Includes both functional and non-functional goals.
+      Suggestions:
+         Prioritize objectives (must/should/could) to support architectural
+            trade-offs (for example, whether low latency outweighs depth of
+            ML analysis).
+         Add measurable criteria (for example, “risk score generated within
+            300 ms”).
+         Identify non-goals (for example, no protection outside the browser,
+            no enterprise-scale management features).
+
+   Hardware, software, and human interfaces section
+      Strengths:
+         Hardware interfaces are appropriate for a browser-based system
+            (user device + internet + input peripherals).
+         Software interface section properly lists required Chrome extension
+            APIs, communication protocols, optional server components, and
+            database options.
+         Human interface description is clear and shows risk indicators,
+            popup design, and page overlays.
+      Suggestions:
+         Distinguish between runtime dependencies (Chrome APIs, REST
+            server) and development dependencies (build tools, packaging
+            requirements).
+         Specify compatibility constraints (Chrome version, Manifest V3
+            limitations, cross-browser portability).
+         Expand UI section with error-state behavior, accessibility
+            considerations, and explanations of how risk scores map to
+            visual cues.
+
+
+6.2 ARCHITECTURAL DESIGN SECTION:
+   Major softwre components section
+      Strengths:
+         Lists six main components with clear purposes: content script,
+            background worker, detection engine, popup UI, optional backend
+            server, and optional database.
+         Component responsibilities are specific and operationally relevant
+            (DOM extraction, heuristic evaluation, warning display,
+            threat-intelligence updates).
+      Suggestions:
+         For each component, define provided and required interfaces
+            (what messages, APIs, or events they use).
+         Clarify the ownership of data (for example, where the risk score
+            persists, how temporary features are cached, how logs propagate).
+         Add constraints and assumptions for each component (e.g.,
+            performance budget for analysis, size limits for ML model,
+         message-passing restrictions).
+
+   Major software interactions section
+      Strengths:
+         Outlines the complete data-flow sequence from webpage visit
+            -> feature extraction -> analysis -> UI display -> optional
+            backend logging.
+         Identifies communication mechanisms (Chrome runtime messaging,
+            HTTPS REST calls).
+      Suggestions:
+         Provide sequence diagrams for core workflows: detection cycle,
+            popup refresh, overlay injection, backend reporting, and ML
+            classification.
+         Describe concurrency behaviors (race conditions, async fetch
+            handling, message ordering).
+         Expand on failure modes (network errors, WHOIS API rate limits,
+            service worker suspension in Manifest V3).
+         Add caching policy (for repeated page visits or recurrent domains).
+
+   Architectural design diagrams section
+      Strengths:
+         Includes use-case, component, and deployment diagrams, meeting the
+            expected architectural-diagram set.
+      Suggestions:
+         Ensure diagrams contain legends, interface labels, security
+            boundaries, and data-flow arrows with directionality.
+         Expand diagrams to show message-passing channels, optional backend
+            integration, ML model placement, and browser life-cycle constraints.
+         Include at least one behavioral diagram (sequence or activity) that
+            aligns with 6.2.2’s interaction narrative.
+
+
+OVERALL ASSESSMENT:
+   INTRODUCTION                        1.0
+   System objectives                   1.0
+   H/W, S/W, Human I/F                 1.0
+
+   ARCHITECTURAL DESIGN SECTION:
+   Major softwre components            1.0
+   Major software interactions         1.0
+   Architectural design diagrams       5.0
+                                     ======
+   Subtotal                           10.0
+   ------------------------------------------------------
+   Total Percentage:  10/10 = 100% which is an A-plus
+
+Nice job, Artur!  Very complete and I see you also did the detailed design
+portion of the document.  Excellent to get a head start on that.  Also, your
+diagrams look very good, well labeled and understandable.  Your SDD is
+structurally strong and contains all required sections (6.1–6.2.3). It clearly
+identifies system purpose, objectives, interfaces, components, and
+interactions.  The architecture is understandable and logically partitioned.
+You might consider adding for the architectural level:
+   interface definitions,
+   architectural drivers and constraints,
+   behavioral diagrams,
+   cross-cutting concerns (security, privacy, caching, error handling),
+   detailed runtime considerations related to Chrome Manifest V3.
+
+Otherwise, great work on this one!  I'll review the detailed portion when it
+is due.
