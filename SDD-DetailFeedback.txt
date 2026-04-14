@@ -1,0 +1,90 @@
+
+Documentation Feedback ~ Deliverable #4
+Software Design Document ~ Detailed Design
+CMSI 4072 Spring 2026
+==========================================
+
+DETAILED CLASS DESCRIPTIONS:
+   Strengths
+      This section provides a clear and logically organized breakdown
+         of the system into CSCs that align well with the Chrome
+         extension’s layered architecture. Separating browser interaction,
+         detection logic, user interface, and optional backend components
+         demonstrates good modular design principles.
+   Suggestions
+      Class descriptions focus primarily on fields and method names but
+         could be strengthened by including brief behavioral narratives
+         explaining when and how methods are invoked during runtime.
+
+DETAILED INTERFACE DESCRIPTIONS:
+   Strengths
+      Interface descriptions clearly identify the communication paths
+         between browser components, including content scripts,
+         background workers, and optional backend services. This aligns
+         well with Chrome extension architectural constraints.
+   Suggestions
+      Interface descriptions are concise but could be expanded with a
+         more formal structure, such as defining expected request and
+         response schemas for each interface.
+
+DETAILED DATA STRUCTURE DESCRIPTIONS:
+   Strengths
+      The data structures essential to system operation are clearly
+         defined.
+      The Risk Score object is well designed, combining numeric scoring
+         with human-readable classification and triggered rules, which
+         supports explainability in the user interface.
+   Suggestions
+      Constraints or expected ranges for numeric fields (such as domain
+         age or URL length) could be documented to clarify assumptions.
+
+DETAILED DESIGN DIAGRAMS:
+   Strengths
+      The document includes multiple relevant diagrams, including class,
+         sequence, activity, component, and deployment diagrams, which is
+         appropriate for detailed-design documentation.
+   Suggestions
+      Diagrams are referenced with minimal explanation. Short captions
+         describing what each diagram illustrates would improve clarity
+         for reviewers.
+
+DATABASE DESIGN AND DESCRIPTION:
+   Strengths
+      The document clearly acknowledges that no database is required
+         for core system functionality and justifies this decision based
+         on local, in-browser processing.
+   Suggestions
+      The section would benefit from clearer separation between
+         “no database used” and “optional backend storage” to reduce
+         ambiguity.
+
+
+----------------------------------------------
+OVERALL ASSESSMENT:
+   Category                          Points
+   Class Descriptions:                  3 of  3
+   Interface Descriptions:              3 of  3
+   Data structure Descriptions:         1 of  1
+   Design diagrams:                     3 of  3
+   Database design/descriptions:        2 of  2    [this is a gimme]
+                                     ===========
+   Subtotal                            10 of 10
+   ------------------------------------------------------
+   Total Percentage:  10/10 = 100% which is an A-plus
+
+
+OVERALL EVALUATION
+==================
+For **sections 6.3.1 through 6.4**, this SDD represents a
+**solid, detailed-design-level document** for a browser-based
+security application. The system is well decomposed, class
+responsibilities are clearly defined, and data structures are
+transparent and explainable.
+
+The document would benefit from slightly deeper behavioral detail
+in class and interface descriptions and clearer diagram
+narration, but it already meets the expectations for a detailed
+design review and provides a strong foundation for implementation
+and future extension.
+
+Nice work on this Artur!
